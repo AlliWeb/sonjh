@@ -1,2 +1,2 @@
-# point-biz
-Free website for Biz CH
+# Painting Artist
+Painting Artist Jae-Hyung.SON
