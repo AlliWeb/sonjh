@@ -23,16 +23,16 @@ Table of contents
 12. portfolio
 
 --------------------------------------------- */
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -42,6 +42,10 @@ figure, header, nav, section, article, aside, footer, figcaption {
   padding: 0;
   border: 0;
   outline: 0;
+
+  user-select: none;  /* 드래그 복사방지 */
+  -webkit-user-select: none;  /* 드래그 복사방지 */
+
 }
 
 .clearfix:after {
@@ -108,10 +112,10 @@ p {
   color: #777;
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -312,10 +316,10 @@ a.text-button-icon:hover i {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .background-header {
@@ -362,10 +366,10 @@ header
 .header-area .main-nav .logo {
   line-height: 80px;
   color: #fff;
-  font-size: 28px;
+  font-size: 1.7em;		/* 로고 폰트 */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: -0.05em;
   float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -425,7 +429,7 @@ header
 .header-area .main-nav .nav li a {
   display: block;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 15px;		/* 메인메뉴 폰트 */
   color: #7a7a7a;
   text-transform: uppercase;
   -webkit-transition: all 0.3s ease 0s;
@@ -462,7 +466,7 @@ header
 .header-area .main-nav .nav li.submenu:after {
   font-family: FontAwesome;
   content: "\f107";
-  font-size: 12px;
+  font-size: 15px;		/* 메인메뉴 서브폰트 */
   color: #fff;
   position: absolute;
   right: 18px;
@@ -766,10 +770,10 @@ header
 }
 
 
-/* 
+/*
 ---------------------------------------------
 banner
---------------------------------------------- 
+---------------------------------------------
 */
 /* ==== Main CSS === */
 .img-fill{
@@ -778,6 +782,10 @@ banner
   overflow: hidden;
   position: relative;
   text-align: center
+/*  justify-content: center;   /* 수평 중앙 정렬 */
+/*  align-items: center;       /* 수직 중앙 정렬 */
+/*  height: 100vh;             /* 화면 전체 높이 */
+
 }
 
 .img-fill img {
@@ -786,6 +794,7 @@ banner
   position: relative;
   display: inline-block;
   max-width: none;
+  height: auto;
 }
 
 *,
@@ -817,7 +826,7 @@ banner
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill{
   height:95vh;
-  background:#000;
+  /* background:#000; */
 }
 
 .Modern-Slider .item .info > div{
@@ -885,36 +894,56 @@ ul.slick-dots {
   display: none!important;
 }
 
-.Modern-Slider .text-content {
-  width: 80%;
+.Modern-Slider .text-content { /* 슬라이드 이미지 */
+  height : 50%;
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.Modern-Slider .item h3 {
-  margin-bottom: 25px;
-  font-size: 16px;
+.Modern-Slider .text-content img { /* 슬라이드 이미지 설정 */
+  height:100%;
+  border: 7px solid white;
+  box-shadow: 1px 2px 3px 2px rgba(0,0,0,0.5);
+}
+
+.Modern-Slider .item h3 { /* 슬라이드 이미지 설명글 */
+  font-family: 'FontAwesome';
+  margin-top: 12px;
+  font-size: 0.78em;
   text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   color:#FFF;
-  animation:fadeOutRight 1s both;
+  animation:fadeOutRight 2s both;
 }
 
 .Modern-Slider .item h5 {
-  margin-bottom: 50px;
-  font-size: 36px;
-  font-weight: 200;
-  letter-spacing: 2.5px;
+  font-family: 'FontAwesome';
+  margin-top: 20px;
+  font-size: 1.0em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   color:#FFF;
   overflow:hidden;
   animation:fadeOutLeft 1s both;
 }
 
+.Modern-Slider .item h7 {
+  font-family: 'FontAwesome';
+  margin-top: 50px;
+  font-size: 4.0em;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+  color:#FFF;
+  overflow:hidden;
+  animation:fadeOutLeft 3s both;
+}
+
 .Modern-Slider .item a {
-  margin: 0 5px;
+/*  position: absolute; */
+  margin: 0px 10px;
 }
 
 .Modern-Slider .item.slick-active h3{
@@ -1248,10 +1277,10 @@ testimonials
 
 
 
-/* 
+/*
 ---------------------------------------------
 contact
---------------------------------------------- 
+---------------------------------------------
 */
 
 #contact-us .section-heading {
@@ -1327,14 +1356,14 @@ contact
 
 
 
-/* 
+/*
 ---------------------------------------------
 footer
---------------------------------------------- 
+---------------------------------------------
 */
 
 footer {
-  padding: 80px 0px;
+  padding: 40px 0px;
   background: rgb(51,155,158);
   background: linear-gradient(145deg, rgba(51,155,158,1) 0%, rgba(104,204,152,1) 100%);
 }
@@ -1397,10 +1426,10 @@ footer .right-text-content ul li a:hover {
 
 
 
-/* 
+/*
 ---------------------------------------------
 preloader
---------------------------------------------- 
+---------------------------------------------
 */
 #preloader {
   overflow: hidden;
@@ -1484,10 +1513,10 @@ preloader
 
 
 
-/* 
+/*
 ---------------------------------------------
 search
---------------------------------------------- 
+---------------------------------------------
 */
 
 #search {
@@ -1571,10 +1600,10 @@ search
 
 
 
-/* 
+/*
 ---------------------------------------------
 portfolio
---------------------------------------------- 
+---------------------------------------------
 */
 
 #projects .filters {
