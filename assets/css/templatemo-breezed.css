@@ -44,7 +44,12 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 
   user-select: none;  /* 드래그 복사방지 */
-  -webkit-user-select: none;  /* 드래그 복사방지 */
+  -webkit-user-select: none; /* 드래그 복사방지 */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+
+
 
 }
 
