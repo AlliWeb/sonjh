@@ -1,5 +1,5 @@
 (function ($) {
-	
+
 	"use strict";
 
 	$(window).scroll(function() {
@@ -13,12 +13,12 @@
 	    $("header").removeClass("background-header");
 	  }
 	});
-	
+
 
 	$('.filters ul li').click(function(){
 	  $('.filters ul li').removeClass('active');
 	  $(this).addClass('active');
-	  
+
 	  var data = $(this).attr('data-filter');
 	  $grid.isotope({
 	    filter: data
@@ -46,7 +46,7 @@
 	   // fade:true,
 	    draggable:false,
 	    prevArrow:'<button class="PrevArrow"></button>',
-	    nextArrow:'<button class="NextArrow"></button>', 
+	    nextArrow:'<button class="NextArrow"></button>',
 	  });
 
 	$('.search-icon a').on("click", function(event) {
@@ -95,11 +95,11 @@
 
 	// Scroll animation init
 	window.sr = new scrollReveal();
-	
+
 
 	// Menu Dropdown Toggle
 	if($('.menu-trigger').length){
-		$(".menu-trigger").on('click', function() {	
+		$(".menu-trigger").on('click', function() {
 			$(this).toggleClass('active');
 			$('.header-area .nav').slideToggle(200);
 		});
@@ -115,8 +115,8 @@
 				var width = $(window).width();
 				if(width < 991) {
 					$('.menu-trigger').removeClass('active');
-					$('.header-area .nav').slideUp(200);	
-				}				
+					$('.header-area .nav').slideUp(200);
+				}
 				$('html,body').animate({
 					scrollTop: (target.offset().top) - 80
 				}, 700);
@@ -127,17 +127,17 @@
 
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
-	    
+
 	    //smoothscroll
 	    $('a[href^="#"]').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
-	        
+
 	        $('a').each(function () {
 	            $(this).removeClass('active');
 	        })
 	        $(this).addClass('active');
-	      
+
 	        var target = this.hash,
 	        menu = target;
 	       	var target = $(this.hash);
@@ -204,3 +204,24 @@
 
 
 })(window.jQuery);
+
+
+
+	  // 우클릭 방지
+	  document.addEventListener('contextmenu', e => e.preventDefault());
+
+	  // 텍스트 선택 및 복사 방지
+	  document.addEventListener('selectstart', e => e.preventDefault());
+	  document.addEventListener('copy', e => e.preventDefault());
+
+	  // F12 키 및 개발자도구 단축키 차단
+	  document.addEventListener('keydown', function(e) {
+		if (e.keyCode === 123 || // F12
+			(e.ctrlKey && e.shiftKey && ['I','J','C','U'].includes(e.key.toUpperCase()))) {
+		  e.preventDefault();
+		  alert('오늘도 즐거운 하루 되세요!~');
+		}
+	  });
+
+	  // 디버깅 방해
+	  setInterval(() => { debugger; }, 200);
