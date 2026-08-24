@@ -922,7 +922,7 @@ ul.slick-dots {
   letter-spacing: -0.02em;
   color:#FFF;
   animation:fadeOutRight 2s both;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 }
 
