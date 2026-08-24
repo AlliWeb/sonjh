@@ -922,6 +922,8 @@ ul.slick-dots {
   letter-spacing: -0.02em;
   color:#FFF;
   animation:fadeOutRight 2s both;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 }
 
 .Modern-Slider .item h5 {
